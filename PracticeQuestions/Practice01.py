@@ -1,3 +1,7 @@
+# Write a program to read five real numbers from user and find the average and standard 
+# deviation.
+
+
 import math
 
 list=[]

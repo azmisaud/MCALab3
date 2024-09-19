@@ -3,6 +3,6 @@ def modify_string(word):
         return word
     if word[-1]!='e':
         return word
-    return word[:-1]
+    return word[:-1]+'en'
 
 print(modify_string("Give"))
