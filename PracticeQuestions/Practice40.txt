@@ -1,0 +1,8 @@
+Hello, this is a sample text file.
+It contains some random words and numbers, such as 12345.
+
+This is the second paragraph, which includes both letters and digits like 67890.
+Python is fun!
+
+Line four, with more text and the number 42.
+End of file.
