@@ -1,6 +1,6 @@
 # MCALab3
 
-Welcome to the MCA 3rd Semester Lab repository! This repository contains solutions to various programming problems organized by week. Each week focuses on different concepts and challenges to enhance your programming skills.
+Welcome to the MCALab3 repository! This repository contains solutions to various programming problems organized by week. Each week focuses on different concepts and challenges to enhance your programming skills.
 
 ## Folder Structure
 
