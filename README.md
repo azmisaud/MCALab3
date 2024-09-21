@@ -1,4 +1,4 @@
-# MCA 3rd Semester Lab
+# MCALab3
 
 Welcome to the MCA 3rd Semester Lab repository! This repository contains solutions to various programming problems organized by week. Each week focuses on different concepts and challenges to enhance your programming skills.
 
@@ -434,6 +434,6 @@ Each folder contains multiple problems with specific objectives. Below is a deta
 
 1. Clone this repository to your local machine using:
     ```
-    git clone https://github.com/azmisaud/MCA-LAB-3rd-Semester.git
+    git clone https://github.com/azmisaud/MCALab3.git
     ```
 2. Navigate to the desired week's folder to explore the problems and their solutions.
