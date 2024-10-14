@@ -1,0 +1,3 @@
+101,Computer,Chungi
+102,Math,DuckPoint
+103,Agriculture,Jamalpur

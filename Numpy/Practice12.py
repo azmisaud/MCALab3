@@ -11,3 +11,6 @@ diagonal_elements=np.diag(matrix_random)
 
 print("\nDiagonal Elements : ")
 print(diagonal_elements)
+
+array=np.random.randint(0,10,(2,3))
+print(array)
