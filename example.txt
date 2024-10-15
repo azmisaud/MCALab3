@@ -1,0 +1,3 @@
+
+This is an example file with some vowels like e, a, i, o, u, and E, I, O.
+1234567890
