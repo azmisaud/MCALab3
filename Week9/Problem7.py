@@ -20,6 +20,7 @@ def add_HRA(filename):
         new_lines.append(new_line)
 
     write_file('hra_week9_prob5.txt',new_lines)
+    print("File saved as hra_week9_prob5.txt")
 
 add_HRA('file_week9_problem7.txt')
 

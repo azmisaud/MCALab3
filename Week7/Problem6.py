@@ -21,6 +21,7 @@ def swap_lines(file1,file2):
 
     write_file(file1,lines_file1)
     write_file(file2,lines_file2)
+    print("File swapped successfully, for confirmation, check.")
 
 def main():
     file1='file1.txt'
