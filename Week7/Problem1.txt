@@ -1,0 +1,30 @@
+Here’s a pointwise breakdown of different types of Linux shells:
+
+1. `sh` (Bourne Shell)
+   - Developed by Stephen Bourne at AT&T Bell Labs in the 1970s.
+   - Default shell in early Unix systems.
+   - Known for its simplicity and scripting capabilities.
+   - Lacks interactive features like command history and autocompletion.
+   - Often used for scripting because of its portability across different Unix systems.
+
+2. `csh` (C Shell)
+   - Developed by Bill Joy in the late 1970s.
+   - Syntax similar to the C programming language.
+   - Supports aliasing, command history, and job control.
+   - Includes built-in arithmetic expressions.
+   - Less popular for scripting due to quirks in its design but favored for interactive use in the past.
+
+3. `ksh` (Korn Shell)
+   - Developed by David Korn at AT&T Bell Labs in the early 1980s.
+   - Combines features of Bourne Shell (`sh`) and C Shell (`csh`).
+   - Supports advanced scripting features like arrays and functions.
+   - Better performance for scripts due to its efficiency.
+   - Provides interactive features like command history and autocompletion.
+
+4. `bash` (Bourne Again Shell)
+   - Developed by Brian Fox for the GNU Project in 1989.
+   - The default shell on most Linux distributions.
+   - Backward-compatible with `sh` but includes more advanced features.
+   - Supports command history, autocompletion, and scripting enhancements like arrays and associative arrays.
+   - Extensively used for both scripting and interactive terminal use.
+

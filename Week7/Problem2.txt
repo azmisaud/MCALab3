@@ -1,0 +1,64 @@
+cp command (Copy Files)
+
+Syntax: 
+        cp [options] source destination
+
+Usage:
+
+        Copy a file: cp file1.txt file2.txt
+
+        Copy a directory (with -r for recursive): cp -r dir1 dir2
+
+Options:
+
+        -r or --recursive: Copy directories recursively.
+
+        -i or --interactive: Prompt before overwrite.
+
+        -v or --verbose: Show details of the copying process.
+
+        -u or --update: Only copy when the source is newer than the destination.
+
+
+mv command (Move/Rename Files)
+
+Syntax: \
+        mv [options] source destination
+
+Usage:
+
+        Move a file: mv file1.txt /path/to/destination/
+
+        Rename a file: mv oldname.txt newname.txt
+
+        Move a directory: mv dir1 /path/to/destination/
+
+Options:
+
+        -i or --interactive: Prompt before overwrite.
+
+        -v or --verbose: Show details of the moving process.
+
+        -n or --no-clobber: Do not overwrite existing files.
+
+
+rm command (Remove Files)
+
+Syntax: 
+        rm [options] file
+
+Usage:
+
+        Remove a file: rm file1.txt
+
+        Remove a directory (with -r for recursive): rm -r dir1
+
+Options:
+
+        -r or --recursive: Remove directories and their contents.
+
+        -i or --interactive: Prompt before removal.
+
+        -f or --force: Force removal without prompts.
+
+        -v or --verbose: Show details of the removal process.
