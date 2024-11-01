@@ -21,6 +21,6 @@ for sentence in test_strings:
     try:
         for tree in parser.parse(tokens):
             print(tree)
-            tree.pretty_print()
+            tree.draw()
     except ValueError:
         print("NO Valid Parse Found")

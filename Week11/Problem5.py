@@ -1,82 +1,33 @@
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.impute import SimpleImputer
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
-import matplotlib.pyplot as plt
-
-df=pd.read_csv('demo.csv')
-
-nominal_features=['x1','x2']
-continous_features=['x3','x4','x5','x6']
-
-preprocessor = ColumnTransformer(
-    transformers=[
-        ('num', SimpleImputer(strategy='mean'),continous_features),
-        ('cat', Pipeline(steps=[('imputer', SimpleImputer(strategy='most_frequent')),
-                               ('onehot',OneHotEncoder())]),nominal_features)
-])
-
-df['x7']=np.random.rand(len(df))
-
-X=df.drop(columns='y')
-y=df['y']
-
-scaler=StandardScaler()
-
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=42)
-
-logistic_pipeline=Pipeline(steps=[('preprocessor', preprocessor),
-                                  ('scaler',scaler),
-                                  ('logistic',LogisticRegression())])
 
 
-tree_pipeline=Pipeline(steps=[('preprocessor', preprocessor),
-                                  ('scaler',scaler),
-                                  ('logistic',DecisionTreeClassifier())])
+#generating the demo.csv file
 
+num_samples=1000
 
-forest_pipeline=Pipeline(steps=[('preprocessor', preprocessor),
-                                  ('scaler',scaler),
-                                  ('logistic',RandomForestClassifier())])
+x1=np.random.choice(['A','B','C','D'],num_samples)
+x2=np.random.choice(['W','X','Y','Z'],num_samples)
 
-logistic_pipeline.fit(X_train,y_train)
-tree_pipeline.fit(X_train,y_train)
-forest_pipeline.fit(X_train,y_train)
+x3=np.random.normal(loc=50,scale=10,size=num_samples)
+x4=np.random.uniform(0,100,size=num_samples)
+x5=np.random.normal(loc=30,scale=5,size=num_samples)
+x6=np.random.uniform(10,50,size=num_samples)
 
-y_pred_logistic=logistic_pipeline.predict(X_test)
-y_pred_tree=tree_pipeline.predict(X_test)
-y_pred_forest=forest_pipeline.predict(X_test)
+x7=np.random.uniform(0,1,size=num_samples)
 
-def evaluate_model(y_test,y_pred,model_name):
-    accuracy=accuracy_score(y_test,y_pred)
-    f1=f1_score(y_test,y_pred)
+y=np.random.choice([0,1],num_samples)
 
-    print(f"{model_name} Accuracy :  {accuracy:.4f}")
-    print(f"{model_name} F1 score : {f1:.4f}")
-    return accuracy,f1
+data=pd.DataFrame({
+    'x1':x1,
+    'x2':x2,
+    'x3':x3,
+    'x4':x4,
+    'x5':x5,
+    'x6':x6,
+    'x7':x7,
+    'y':y
+})
 
-print("\n Model Performance : ")
+data.to_csv("generate_demo.csv",index=False)
 
-acc_log, f1_log=evaluate_model(y_test,y_pred_logistic,'Logistic Regression')
-acc_tree, f1_tree=evaluate_model(y_test,y_pred_tree,"Decision Tree")
-acc_forest, f1_forest=evaluate_model(y_test,y_pred_forest,'Random Forest')
-
-
-def plot_confusion_matrix(y_test,y_pred,model_name):
-    cm=confusion_matrix(y_test,y_pred)
-    disp=ConfusionMatrixDisplay(confusion_matrix=cm)
-    disp.plot()
-    plt.title(f'Confusion Matrix : {model_name}')
-    plt.show()
-
-print("\n Confusion Matrix : ")
-plot_confusion_matrix(y_test,y_pred_logistic,"Logistic Regression")
-plot_confusion_matrix(y_test,y_pred_tree,"Decision Tree")
-plot_confusion_matrix(y_test,y_pred_forest,"Random Forest")
